@@ -4,7 +4,6 @@
   var pairs = 2;
   var cards = [];
   
-  
   var flipCount = 0;
   var firstCard = null;
   var secondCard = null;
@@ -51,7 +50,20 @@
       firstCard = card;
     } else {
       secondCard = card;
+      check();
     }
+  }
+  
+  function check() {
+    if(
+      firstCard.children[0].textContent !==
+      secondCard.children[0].textContent
+    ) {
+      firstCard.className = 'card';
+      secondCard.className = 'card';
+    }
+    firstCard = null;
+    secondCard = null;
   }
   
   init();
